@@ -3,12 +3,12 @@
     <div class="page-title">
       <!-- <span class="text">Feedback List</span> -->
     </div>
-    <div class="table" v-if="result && result.length > 0">
+    <div class="table" v-if="feedbacks && feedbacks.length > 0">
       <div class="titles">
         <span class="title">Client ID</span>
         <span class="title">Message</span>
       </div>
-      <div class="datas" v-for="(item, index) in result" :key="index">
+      <div class="datas" v-for="(item, index) in feedbacks" :key="index">
         <span class="id"> {{ item.id }}</span>
         <span class="message"> {{ item.text }}</span>
       </div>
@@ -21,20 +21,16 @@
 
 <script>
 export default {
-  name: "FFilter",
+  name: "FFeedbackList",
   data() {
     return {
       clientId: null,
       result: null,
     };
   },
-  methods: {
-    search(id) {
-      this.axios
-        .get(`http://localhost:3000/feedbacks/${id}`)
-        .then((response) => {
-          this.result = response.data;
-        });
+  computed: {
+    feedbacks() {
+      return this.userInfo?.feedbacks || null;
     },
   },
 };
