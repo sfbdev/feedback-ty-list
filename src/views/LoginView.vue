@@ -10,7 +10,7 @@
           placeholder="Password"
         />
         <button @click="submit()">Log in</button>
-        <div class="errors">
+        <div class="errors" v-if="errors.length > 0">
           <span v-for="(error, index) in formErrors" :key="index">
             {{ error.msg }}
           </span>
@@ -25,7 +25,7 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      formErrors: null,
+      formErrors: [],
       model: {
         email: null,
         password: null,
