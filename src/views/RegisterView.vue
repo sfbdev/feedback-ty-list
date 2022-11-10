@@ -10,7 +10,7 @@
           placeholder="Password"
         />
         <button @click="submit()">Sign in</button>
-        <div class="errors" v-if="errors.length > 0">
+        <div class="errors" v-if="formErrors.length > 0">
           <span v-for="(error, index) in formErrors" :key="index">
             {{ error.msg }}
           </span>
