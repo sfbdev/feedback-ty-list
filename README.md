@@ -1,6 +1,8 @@
 # feedback-ty-list
 
 Feedback-Ty modülünden gelen feedbackleri görmek için geliştirilmiştir.
+
+Live demo: https://feedback-ty-list.netlify.app/
 ## Proje kurulumu
 ```
 yarn install
